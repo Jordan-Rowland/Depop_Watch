@@ -1,0 +1,22 @@
+/*Style cheet for Depop wrapper*/
+.brand-logo {
+    margin-left: 35px;
+}
+
+.user {
+    margin-bottom: 0px;
+}
+
+.price-font {
+    position: relative;
+    bottom: 20px;
+}
+
+.sold {
+    text-decoration: line-through;
+}
+
+nav {
+    height: 50%;
+
+}
