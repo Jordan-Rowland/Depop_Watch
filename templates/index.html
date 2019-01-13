@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<div class="row">
+
+{% for url, price, photo in items %}
+  <div class="center col s12 m4 l3">
+
+  {% with user = url.split('/')[-2].title() %}
+    {% if user in users.title() %}
+      <p class="center user"><strong class="green-text">***{{ user }}***</strong></p>
+    {% else %}
+      <p class="center user"><strong>{{ user }}</strong></p>
+    {% endif %}
+  {% endwith %}
+
+  <span class="center"><a href="{{ url }}"><img width=85% src="{{ photo }}"></a></span>
+  {% if 'sold' in price.lower() %}
+    <p class="center price-font"><strong class="red-text sold">{{ price }}</strong></p>
+  {% else %}
+    <p class="center price-font"><strong>{{ price }}</strong></p>
+  {% endif %}
+  </div>
+
+{% endfor %}
+
+</div>
+</div>
+{% endblock %}
